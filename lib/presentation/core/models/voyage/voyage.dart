@@ -4,7 +4,7 @@ abstract interface class Voyage {
   String? get code;
 
   /// Selection of water area (port or sea)
-  Aquariam get aquatorium;
+  Aquatorium get aquatorium;
 
   /// The density of the intake water used in the calculations.
   double get density;
@@ -22,9 +22,15 @@ abstract interface class Voyage {
   /// A description of the voyage or cargo plan or any comment
   String? get description;
 
+  /// The key-value pairs of the [Voyage]
   Map<String, String> toMap();
 
-  bool isEntryDescription(String entry);
+  /// Returns true if the given [field] is the description of the voyage
+  bool isFieldDescription(String field);
+
+  /// Returns the unit of the given [field]
+  /// if the [field] is not in the map, returns empty [String]
+  String unitsBy(String field);
 }
 
 final class JsonVoyage implements Voyage {
@@ -33,7 +39,7 @@ final class JsonVoyage implements Voyage {
   JsonVoyage(this._json);
 
   @override
-  Aquariam get aquatorium => Aquariam.fromString(_json['aquarium']);
+  Aquatorium get aquatorium => Aquatorium.fromString(_json['aquatorium']);
 
   @override
   CargoGrade get cargoGrade => CargoGrade.fromString(_json['cargo_grade']);
@@ -58,7 +64,15 @@ final class JsonVoyage implements Voyage {
   Map<String, String> toMap() => _json;
 
   @override
-  bool isEntryDescription(String entry) => entry == 'voyage_description';
+  bool isFieldDescription(String entry) => entry == 'voyage_description';
+
+  @override
+  String unitsBy(String field) {
+    if (field == 'intake_water_density') {
+      return 't/m^3';
+    }
+    return '';
+  }
 }
 
 enum Icing {
@@ -87,18 +101,18 @@ enum CargoGrade {
   }
 }
 
-enum Aquariam {
+enum Aquatorium {
   port,
   sea;
 
-  factory Aquariam.fromString(String? value) {
+  factory Aquatorium.fromString(String? value) {
     switch (value) {
       case 'port':
-        return Aquariam.port;
+        return Aquatorium.port;
       case 'sea':
-        return Aquariam.sea;
+        return Aquatorium.sea;
       default:
-        return Aquariam.port;
+        return Aquatorium.port;
     }
   }
 }

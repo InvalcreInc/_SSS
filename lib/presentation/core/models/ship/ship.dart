@@ -73,10 +73,14 @@ class Ship {
 
   String get chiefMate => _chiefMate ?? '';
 
-  List<String> editableEntries = ['ship_master', 'ship_chief_mate'];
+  /// List of fields that can be edited.
+  List<String> editableFields = ['ship_master', 'ship_chief_mate'];
 
-  bool isEntryEditable(String entry) {
-    return editableEntries.contains(entry);
+  /// Checks if the given [field] is found in [editableFields] list
+  /// returns true if found, false otherwise.
+  /// used to determine if a field can be edited.
+  bool isFieldEditable(String field) {
+    return editableFields.contains(field);
   }
 
   Map<String, dynamic> toMap() {
@@ -94,7 +98,7 @@ class Ship {
       'build_yard': buildYard,
       'build_place': buildPlace,
       'build_year': buildYear,
-      'builder_number': builderNumber,
+      'ship_builder_number': builderNumber,
       'ship_master': master,
       'ship_chief_mate': chiefMate,
     };

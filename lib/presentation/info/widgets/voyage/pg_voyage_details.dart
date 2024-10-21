@@ -13,7 +13,7 @@ class PgVoyageDetails {
     return Ok(
       JsonVoyage({
         "voyage_code": "Код рейса",
-        "aquarium": "sea",
+        "aquatorium": "sea",
         "intake_water_density": "1.025",
         "cargo_grade": "summer",
         "icing": "none",
@@ -26,39 +26,41 @@ class PgVoyageDetails {
   ///
   /// Fetches list of itineraries from the Postgres database
   Future<Result<List<Itinerary>, Failure<String>>> fetchItineraries() async {
-    return Ok([
-      {
-        "index": "1",
-        "port": "Архангельск",
-        "port_code": "RUARH",
-        "arrival": "2024-10-19 10:23",
-        "departure": "2024-10-19 10:23",
-        "draft_limit": "100"
-      },
-      {
-        "port": "Азов",
-        "index": "2",
-        "port_code": "RUAZO",
-        "arrival": "2024-10-19 10:23",
-        "departure": "2024-10-19 10:23",
-        "draft_limit": "100"
-      },
-      {
-        "port": "Астрахань",
-        "port_code": "RUAST",
-        "arrival": "2024-10-19 10:23",
-        "departure": "2024-10-19 10:23",
-        "index": "3",
-        "draft_limit": "600",
-      },
-      {
-        "port": "Кемерово",
-        "port_code": "RUKEM",
-        "arrival": "2024-10-19 10:23",
-        "departure": "2024-10-19 10:23",
-        "index": "4",
-        "draft_limit": "200",
-      }
-    ].map((e) => JsonItinerary(json: e)).toList());
+    return Ok(
+      [
+        {
+          "index": "1",
+          "port": "Архангельск",
+          "port_code": "RUARH",
+          "arrival": "2024-10-19 11:24:54.00 +02:00",
+          "departure": "2024-10-19 11:24:54.00 +02:00",
+          "draft_limit": "100"
+        },
+        {
+          "port": "Азов",
+          "index": "2",
+          "port_code": "RUAZO",
+          "arrival": "2024-10-19 09:24:54 +02:00",
+          "departure": "2024-10-19 09:24:54 +02:00",
+          "draft_limit": "100"
+        },
+        {
+          "port": "Астрахань",
+          "port_code": "RUAST",
+          "arrival": "2024-10-21T10:11:14 +02:00",
+          "departure": "2024-10-19 09:24:54 +02:00",
+          "index": "3",
+          "draft_limit": "600",
+        },
+        {
+          "port": "Кемерово",
+          "port_code": "RUKEM",
+          "arrival": "2024-10-19 09:24:54 +02:00",
+          "departure": "2024-10-19 09:24:54 +02:00",
+          "index": "4",
+          "draft_limit": "200",
+        }
+      ].map((e) => JsonItinerary(json: e)).toList(),
+    );
   }
 }

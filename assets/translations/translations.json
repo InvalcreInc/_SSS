@@ -158,10 +158,10 @@
   "ship_builder_number": ["Builder number", "Заводской номер"],
   "ship_master": ["Master", "Капитан"],
   "ship_chief_mate": ["Chief mate", "Старший помощник капитана"],
-  "aquarium": ["Aquarium", "Акватория"],
+  "aquatorium": ["Aquatorium", "Акватория"],
   "intake_water_density": [
     "Intake water density",
-    "Плотность забортной воды [т/м^3]"
+    "Плотность забортной воды"
   ],
   "voyage_description": ["Voyage description", "Описание рейса"],
   "voyage_code": ["Voyage code", "Код рейса"],
@@ -171,6 +171,7 @@
     "Намокание палубного лесного груза"
   ],
   "cargo_grade": ["Cargo grade", "Грузовая марка"],
+  "t/m": ["t/m", "т/м"],
   "t/m3": ["t/m^3", "т/м^3"],
   "ETD": ["ETD", "ETD"],
   "ETA": ["ETA", "ETA"],
