@@ -13,9 +13,9 @@ class PgVoyageDetails {
     return Ok(
       JsonVoyage({
         "voyage_code": "Код рейса",
-        "aquatorium": "sea",
+        "water_area": "sea",
         "intake_water_density": "1.025",
-        "cargo_grade": "summer",
+        "load_line": "summer",
         "icing": "none",
         "wetting_deck": "Нет",
         "voyage_description": "Описание рейса",

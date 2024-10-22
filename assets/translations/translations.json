@@ -147,7 +147,7 @@
     "Classification Society",
     "Классификационное общество"
   ],
-  "registration": ["Registration", "Регистровый номер"],
+  "registration": ["Registration number", "Регистровый номер"],
   "registration_port": ["Registration port", "Порт приписки"],
   "flag_state": ["Flag state", "Флаг приписки"],
   "ship_owner": ["Owner", "Cудовладелец"],
@@ -155,10 +155,10 @@
   "build_yard": ["Build yard", "Верфь постройки"],
   "build_place": ["Build place", "Место постройки"],
   "build_year": ["Build year", "Год постройки"],
-  "ship_builder_number": ["Builder number", "Заводской номер"],
+  "ship_builder_number": ["Ship builder hull", "Заводской номер"],
   "ship_master": ["Master", "Капитан"],
   "ship_chief_mate": ["Chief mate", "Старший помощник капитана"],
-  "aquatorium": ["Aquatorium", "Акватория"],
+  "water_area": ["Water area", "Акватория"],
   "intake_water_density": [
     "Intake water density",
     "Плотность забортной воды"
@@ -170,7 +170,7 @@
     "Wetting of deck timber cargo",
     "Намокание палубного лесного груза"
   ],
-  "cargo_grade": ["Cargo grade", "Грузовая марка"],
+  "load_line": ["Load line", "Грузовая марка"],
   "t/m": ["t/m", "т/м"],
   "t/m3": ["t/m^3", "т/м^3"],
   "ETD": ["ETD", "ETD"],
@@ -182,5 +182,6 @@
   "winter": ["Winter", "Зимняя"],
   "light": ["Light", "Легкая"],
   "port": ["Port", "Порт"],
-  "sea": ["Sea", "Море"]
+  "sea": ["Sea", "Море"],
+  "general":["General","Общие"]
 }

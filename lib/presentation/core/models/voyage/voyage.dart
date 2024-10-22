@@ -4,14 +4,14 @@ abstract interface class Voyage {
   String? get code;
 
   /// Selection of water area (port or sea)
-  Aquatorium get aquatorium;
+  WaterArea get waterArea;
 
   /// The density of the intake water used in the calculations.
   double get density;
 
   /// The choice of cargo grade determines
   ///  the draught limits used in ship's landing calculations
-  CargoGrade get cargoGrade;
+  LoadLine get loadLine;
 
   /// Taken into account in calculations of settlement, strength and stability
   Icing get icing;
@@ -39,10 +39,10 @@ final class JsonVoyage implements Voyage {
   JsonVoyage(this._json);
 
   @override
-  Aquatorium get aquatorium => Aquatorium.fromString(_json['aquatorium']);
+  WaterArea get waterArea => WaterArea.fromString(_json['water_area']);
 
   @override
-  CargoGrade get cargoGrade => CargoGrade.fromString(_json['cargo_grade']);
+  LoadLine get loadLine => LoadLine.fromString(_json['load_line']);
 
   @override
   String? get code => _json['voyage_code'];
@@ -88,31 +88,31 @@ enum Icing {
   }
 }
 
-enum CargoGrade {
+enum LoadLine {
   summer,
   winter,
   light;
 
-  factory CargoGrade.fromString(String? value) {
-    return CargoGrade.values.firstWhere(
+  factory LoadLine.fromString(String? value) {
+    return LoadLine.values.firstWhere(
       (element) => element.toString() == value,
-      orElse: () => CargoGrade.summer,
+      orElse: () => LoadLine.summer,
     );
   }
 }
 
-enum Aquatorium {
+enum WaterArea {
   port,
   sea;
 
-  factory Aquatorium.fromString(String? value) {
+  factory WaterArea.fromString(String? value) {
     switch (value) {
       case 'port':
-        return Aquatorium.port;
+        return WaterArea.port;
       case 'sea':
-        return Aquatorium.sea;
+        return WaterArea.sea;
       default:
-        return Aquatorium.port;
+        return WaterArea.port;
     }
   }
 }

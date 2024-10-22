@@ -60,18 +60,16 @@ class _VoyageItineraryTableState extends State<VoyageItineraryTable> {
           grow: 1.0,
           // name: Localized('Arrival').v,
           name: Localized('ETA').v,
-          cellBuilder: (context, row) => _buildStyledCell(
-            row.data.arrival.formatRU(),
-            // color: Colors.green,
+          cellBuilder: (context, row) => NullableCellWidget(
+            value: row.data.arrival.formatRU(),
           ),
         ),
         DaviColumn<Itinerary>(
           grow: 1.0,
           // name: Localized('Departure').v,
           name: Localized('ETD').v,
-          cellBuilder: (context, row) => _buildStyledCell(
-            row.data.departure.formatRU(),
-            color: Colors.red,
+          cellBuilder: (context, row) => NullableCellWidget(
+            value: row.data.departure.formatRU(),
           ),
         ),
         _hiddenColumns.first

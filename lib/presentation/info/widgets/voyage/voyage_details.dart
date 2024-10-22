@@ -45,7 +45,7 @@ class _VoyageDetailsWidgetState extends State<VoyageDetailsWidget> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          Localized('Ship').v,
+          Localized('general').v,
           textAlign: TextAlign.start,
           style: theme.textTheme.titleLarge,
         ),
@@ -105,16 +105,16 @@ class _VoyageDetailsWidgetState extends State<VoyageDetailsWidget> {
             return Ok(value);
           },
         );
-      case 'cargo_grade':
+      case 'load_line':
         return _BuildDropdownButton(
-          items: CargoGrade.values.map((e) => e.name).toList(),
-          initialValue: CargoGrade.fromString(item.value).name,
+          items: LoadLine.values.map((e) => e.name).toList(),
+          initialValue: LoadLine.fromString(item.value).name,
           onChanged: (value) async => Ok(value),
         );
-      case 'aquatorium':
+      case 'water_area':
         return _BuildDropdownButton(
-          items: Aquatorium.values.map((e) => e.name).toList(),
-          initialValue: Aquatorium.fromString(item.value).name,
+          items: WaterArea.values.map((e) => e.name).toList(),
+          initialValue: WaterArea.fromString(item.value).name,
           onChanged: (value) async => Ok(value),
         );
       case 'icing':
