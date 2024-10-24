@@ -34,6 +34,14 @@ dependencies:
   collection: ^1.18.0
   vector_math: ^2.1.4
   path_drawing: ^1.0.1
+  flutter_markdown: ^0.7.4+1
+  markdown_widget: ^2.3.2+6
+  flutter_math_fork:
+    git:
+      url: https://github.com/Telosnex/flutter_math_fork_fork.git
+  markdown: ^7.2.2
+  html: ^0.15.4
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -50,3 +58,5 @@ flutter:
     - assets/settings/
     - assets/translations/
     - assets/unicodes/
+    - assets/docs/
+    - assets/image/

@@ -23,7 +23,7 @@ class ShipBody extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(blockPadding),
         child: FutureBuilderWidget(
-            onFuture: PgVesselDetails().fetchShip,
+            onFuture: PgShipDetails().fetchShip,
             caseData: (context, ship, _) {
               return _BuildItems(ship: ship);
             }),

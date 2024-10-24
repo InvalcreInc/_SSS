@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sss/presentation/core/theme/app_theme_switch.dart';
+import 'package:sss/presentation/docs/docs_page.dart';
+
 import 'package:sss/presentation/info/info_page.dart';
 
 ///
@@ -48,7 +50,8 @@ class _AppWidgetState extends State<AppWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: _themeSwitch.themeData,
-      home: InfoPage(),
+      // home: InfoPage(),
+      home: DocsPage(),
     );
   }
 

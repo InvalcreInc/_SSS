@@ -3,10 +3,10 @@ import 'package:hmi_core/hmi_core_result_new.dart';
 import 'package:sss/presentation/core/models/ship/ship.dart';
 
 ///
-/// Vessel details collection that stored in postgres DB.
+/// Ship general details collection that stored in postgres DB.
 /// TODO: Postgres database access implementation
-/// 
-class PgVesselDetails {
+///
+class PgShipDetails {
   Future<Result<Ship, Failure<String>>> fetchShip() async {
     return Ok(
       Ship.fromJson({

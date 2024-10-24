@@ -45,7 +45,7 @@ final class JsonVoyage implements Voyage {
   LoadLine get loadLine => LoadLine.fromString(_json['load_line']);
 
   @override
-  String? get code => _json['voyage_code'];
+  String? get code => _json['voyage_code'] ;
 
   @override
   double get density =>
